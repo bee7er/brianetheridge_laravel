@@ -10,7 +10,11 @@ use App\Http\Controllers\Controller;
 class ResourcesController extends Controller
 {
 
-    public function __construct() {
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
         // Make sure that the current user is logged in if they want to access
         // the create function
         $this->middleware('auth', ['only'=>'create']);
@@ -18,12 +22,27 @@ class ResourcesController extends Controller
         //$this->middleware('auth', ['except'=>'index']);
     }
 
+    /**
+     * Displays a list of resources
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
-        // Add a couple of records
-//        $obj = Resource::create(['seq'=>1.0,'name'=>'My image','description'=>'My special image', 'type'=>'IMAGE','url'=>'', 'status'=>'ACTIVE', 'image'=>'chalky.jpg', 'thumb'=>'chalky.jpg', 'created_at'=>'2015-10-20 21:30:13', 'updated_at'=>'2015-10-20 21:30:13']);
+        // Add a record
+//        $obj = Resource::create([
+//            'seq'=>1.0,
+//            'name'=>'My image',
+//            'description'=>'My special image',
+//            'type'=>'IMAGE',
+//            'url'=>'',
+//            'status'=>'ACTIVE',
+//            'image'=>'chalky.jpg',
+//            'thumb'=>'chalky.jpg',
+//            'created_at'=>'2015-10-20 21:30:13',
+//            'updated_at'=>'2015-10-20 21:30:13'
+//        ]);
 //        $obj->save();
-
 
         $resources = Resource::all();
 
@@ -34,6 +53,12 @@ class ResourcesController extends Controller
         return view('resources.index', compact('resources'));
     }
 
+    /**
+     * Shows a particular resource
+     *
+     * @param $id
+     * @return \Illuminate\View\View
+     */
     public function show($id)
     {
         //abort('404');
@@ -50,9 +75,11 @@ class ResourcesController extends Controller
         return view('resources.show', compact('resource'));
     }
 
-
-
-
+    /**
+     * Create a new resource
+     *
+     * @return \Illuminate\View\View
+     */
     public function create()
     {
         return view('resources.create');

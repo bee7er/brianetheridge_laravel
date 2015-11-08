@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         {
             // Is there a user logged in? Load a variable which will be universally available to all views.
             $loggedInUser = \Auth::user();
-
+//dd($loggedInUser);
             $view->with('loggedInUser', $loggedInUser);
         });
     }

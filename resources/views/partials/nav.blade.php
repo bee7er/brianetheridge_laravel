@@ -11,7 +11,6 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="/">Home</a></li>
                 @if ($loggedInUser)
                     {{--<li>{!! link_to('resources', 'Res1', $attributes = [], $secure = null) !!}</li>--}}
                     <li>{!! link_to_action('ResourcesController@index', 'Resources', $parameters = [], $attributes = []) !!}</li>
@@ -20,12 +19,15 @@
                     {{--<li><a href="{!! route('resources_route', $params = []) !!}">Res5</a></li>--}}
                     {{--<li><a href="{!! action('ResourcesController@index', $params = []) !!}">Res6</a></li>--}}
                     {{--<li><a href="/resources">Res7</a></li>--}}
+                    <li>{!! link_to_action('UsersController@index', 'Users', $parameters = [], $attributes = []) !!}</li>
                 @endif
                 <li>{!! link_to_action('ContactController@index', 'Contact', $parameters = [], $attributes = []) !!}</li>
+                <li class="active"><a href="cookies">Cookies</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {{--LoggedInUser is needed on every page. Defined in a view composer.--}}
                 @if (!$loggedInUser)<li><a href="/auth/login">Login</a></li>@endif
+                @if ($loggedInUser)<li><a href="/auth/profile">Hej {{ ucfirst($loggedInUser->first_name) }}</a></li>@endif
                 @if ($loggedInUser)<li><a href="/auth/logout">Logout</a></li>@endif
                 @if (!$loggedInUser)<li><a href="/auth/register">Register</a></li>@endif
             </ul>

@@ -35,6 +35,6 @@ class ContactController extends Controller
 
         // OR
 
-        return view('contact', compact('email'));
+        return view('contact.contact', compact('email'));
     }
 }

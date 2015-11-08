@@ -4,32 +4,23 @@ namespace App\Http\Controllers;
 
 class PagesController extends Controller
 {
-    /*
-     * Pages Controller
-     *
-     * Renders the various static pages for the application.
-     * Is configured to only allow guests.
-     *
-     */
-
     /**
      * Create a new controller instance
+     * Renders the various static pages for the application
      *
      * @return void
      */
     public function __construct() {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
-     * Manages the home page
+     * Displays information relating to cookies
      *
      * @return \Illuminate\View\View
      */
     protected function cookies()
     {
-
-
         return view('pages/cookies');
     }
 
