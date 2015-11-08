@@ -16,15 +16,6 @@ class AppServiceProvider extends ServiceProvider
         // Something that gets called AFTER ALL the service providers have been registered
         // Once we are completely ready to go THEN call the boot method on all these providers.
 
-        // Here we are registering a View Composer:
-        //view()->composer('partials.nav', '<ProcessingClass>');
-        view()->composer('partials.nav', function($view)
-        {
-            // Is there a user logged in? Load a variable which will be universally available to all views.
-            $loggedInUser = \Auth::user();
-//dd($loggedInUser);
-            $view->with('loggedInUser', $loggedInUser);
-        });
     }
 
     /**

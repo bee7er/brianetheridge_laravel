@@ -148,6 +148,7 @@ return [
         /*
          * Added by BEE
          */
+        App\Providers\ViewComposerServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
 

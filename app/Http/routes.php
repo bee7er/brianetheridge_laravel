@@ -10,7 +10,7 @@ Route::get('resources', ['as' => 'resources_route', 'uses' => 'ResourcesControll
 Route::get('resources/create', ['as' => 'create_route', 'uses' => 'ResourcesController@create']);
 Route::get('resources/{id}', ['as' => 'show_route', 'uses' => 'ResourcesController@show']);
 
-Route::get('users', ['as' => 'users_route', 'uses' => 'UsersController@index']);
+Route::resource('users', 'UsersController');
 
 // Authentication, registering 2 controllers
 Route::controllers([

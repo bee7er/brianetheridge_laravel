@@ -29,12 +29,6 @@ class ContactController extends Controller
     {
         $email = '<span style="color:#c40000;">betheridge@gmail.com</span>';
 
-//        return view('contact', [
-//            'email' => $email
-//        ]);
-
-        // OR
-
-        return view('contact.contact', compact('email'));
+        return view('contact.index', compact('email'));
     }
 }

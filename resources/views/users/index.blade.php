@@ -7,7 +7,7 @@
         @if ($users)
         <ul>
             @foreach ($users as $user)
-                <li>{{ $user->first_name  }} {{ $user->surname }}</li>
+                <li>{!! link_to_action('UsersController@show', ($user->first_name . ' ' . $user->surname), $parameters = ['id' => $user->id], $attributes = []) !!}</li>
             @endforeach
         </ul>
         @else
