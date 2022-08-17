@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     protected function index()
     {
-        //flash()->success('You have come home');
+        flash()->success('You have come home');
 
         return view('home');
     }

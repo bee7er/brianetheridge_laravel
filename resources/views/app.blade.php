@@ -30,7 +30,7 @@
 
 @include ('partials.errors')
 
-@include ('flash::message')
+@include ('partials.flash')
 
 <div class="container">
 

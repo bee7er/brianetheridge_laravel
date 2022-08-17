@@ -24,6 +24,13 @@ class User extends Model implements AuthenticatableContract,
     protected $table = 'users';
 
     /**
+     * Have the date fields set automatically
+     *
+     * @var bool
+     */
+    public $timestamps = true;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
